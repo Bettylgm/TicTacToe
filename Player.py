@@ -39,18 +39,17 @@ class HumanPlayer(Player):
         return val
 
 
-def GeniusComputerPlayer (player):
+class SmartComputerPlayer(Player):
     def __init__(self, letter):
         super().__init__(letter)
 
     def get_move(self, game):
-        if len (game.available_moves()) ==9:
+        if len(game.available_moves()) == 9:
             square = random.choice(game.available_moves())
-
         else:
-
-            square = self.minimax (game,self.letter)
+            square = self.minimax(game, self.letter)['position']
         return square
+
     
     def minimax(self, state, player):
         max_player = self.letter  

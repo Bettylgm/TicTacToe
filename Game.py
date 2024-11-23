@@ -1,4 +1,5 @@
-from Player import HumanPlayer, RandomComputerPlayer 
+from Player import HumanPlayer, RandomComputerPlayer,  SmartComputerPlayer
+
 import time 
 class TicTacToe:
     def __init__(self):
@@ -78,12 +79,12 @@ def play(game, x_player, o_player, print_game=True):
             letter = 'O' if letter == 'X' else 'X'
 
         time.sleep(0.8)
-        
+
     if print_game:
         print('Es un empate')
 
 if __name__ == '__main__':
-    x_player = HumanPlayer('X')
+    x_player = SmartComputerPlayer('X')
     o_player = RandomComputerPlayer('O')
     t = TicTacToe()
     play(t, x_player, o_player, print_game=True)
